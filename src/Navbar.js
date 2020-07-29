@@ -2,7 +2,8 @@ import React from 'react'
 import './Navbar.css'
 import Util from './Util'
 
-function Navbar({mode, updateMode, chapter, updateChapter, lesson, updateLesson, page, updatePage}){
+function Navbar({mode, updateMode, chapter, updateChapter, lesson,
+  updateLesson, page, updatePage, password, updatePassword}){
 
   const chapterText = chapter && chapter>0 ? "Unit "+chapter : "Chapters"
   const lessonText = lesson && lesson>0 ? "Lesson "+lesson : "Lessons"
@@ -67,7 +68,7 @@ function Navbar({mode, updateMode, chapter, updateChapter, lesson, updateLesson,
       
       <span className="navbar-brand _brand">Happy Admin</span>
 
-      <ul className="navbar-nav">
+      <ul className="navbar-nav mr-auto">
         <li className="nav-item dropdown">
           <span className="nav-link dropdown-toggle _pointer" href="#" id="navbardrop" data-toggle="dropdown">
             {mode}
@@ -77,13 +78,21 @@ function Navbar({mode, updateMode, chapter, updateChapter, lesson, updateLesson,
             <span onClick={() => {updateMode("Create")}} className="dropdown-item _pointer">Create</span>
           </div>
         </li>
-
         {chapterDropdown}
 
         {lessonDropdown}
 
         {pageDropdown}
-      </ul>
+
+
+      </ul> 
+      <ul className="navbar-nav">
+        <li>
+          <input value={password} onChange={(e)=>{ updatePassword(e.target.value) }}
+            type="text" class="form-control _password navbar-right" placeholder="Password"/>
+        </li> 
+      </ul> 
+  
     </nav>
   </>)
 }

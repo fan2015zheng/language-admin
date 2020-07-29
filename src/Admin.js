@@ -25,7 +25,7 @@ function addPond(text) {
   return text
 }
 
-function Admin({mode, chapter, lesson, page}) {
+function Admin({mode, chapter, lesson, page, password}) {
 
   const [rows, setRows] = useState(() => emptyRows())
   const [words, setWords] = useState([])
@@ -84,6 +84,10 @@ function Admin({mode, chapter, lesson, page}) {
   }
 
   function save() {
+    if (password !== "快乐管理") {
+      alert("Incorrect passord")
+      return
+    }
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -92,7 +96,6 @@ function Admin({mode, chapter, lesson, page}) {
     fetch('https://language5.herokuapp.com/word', options)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         if (data.success) {
           setIsEditing(true)
           if (mode === "Create") {

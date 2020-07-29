@@ -8,6 +8,11 @@ function App() {
   const [chapter, setChapter] = useState(0)
   const [lesson, setLesson] = useState(0)
   const [page, setPage] = useState(0)
+  const [password, setPassword] = useState("")
+
+  function updatePassword(pwd) {
+    setPassword(pwd)
+  }
 
   function updateMode (mode) {
     setMode(mode)
@@ -39,8 +44,9 @@ function App() {
       chapter={chapter} updateChapter={updateChapter}
       lesson={lesson} updateLesson={updateLesson}
       page={page} updatePage={updatePage}
+      passowrd={password} updatePassword={updatePassword}
     />
-    <Admin mode={mode} chapter={chapter} lesson={lesson} page={page}/>
+    <Admin mode={mode} chapter={chapter} lesson={lesson} page={page} password={password}/>
   </>);
 }
 

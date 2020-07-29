@@ -47,6 +47,7 @@ function App() {
       passowrd={password} updatePassword={updatePassword}
     />
     <Admin mode={mode} chapter={chapter} lesson={lesson} page={page} password={password}/>
+    <div className="_special">ç œ ä Ä</div>
   </>);
 }
 

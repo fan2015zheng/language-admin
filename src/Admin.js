@@ -35,17 +35,19 @@ function Admin({mode, chapter, lesson, page}) {
   const dbPage = Util.getDatabasePage("", chapter, lesson, page)
   const chapterLessonPage = `${chapter}-${lesson}-${dbPage}`
 
-  useEffect(()=> {
+  function load() {
     fetch(`https://language5.herokuapp.com/words/${chapterLessonPage}`)
     .then(res => res.json())
     .then(data => {
       const newRows = emptyRows()
-      for(let i=0; i<data.length; i++) {
+      for(let i=0; i<data.length && i<8; i++) {
         newRows[i] = data[i]
       }
       setRows(newRows)
     })
-  }, [chapterLessonPage])
+  }
+
+  useEffect(load, [chapterLessonPage])
 
   function updateRows(rows) {
     setRows(rows)
@@ -93,6 +95,12 @@ function Admin({mode, chapter, lesson, page}) {
         console.log(data)
         if (data.success) {
           setIsEditing(true)
+          if (mode === "Create") {
+            setRows(emptyRows())
+          }
+          else {
+            load()
+          }
         } else {
           alert("Database Error !")
         }

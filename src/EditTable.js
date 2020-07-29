@@ -2,7 +2,6 @@ import React from 'react'
 import './EditTable.css'
 
 function EditTable({rows, updateRows}) {
-
   function onCellChange(rowIdex, columnName, value) {
     const rows2 = rows.map((w,i) => {
       if (i !== rowIdex) {

@@ -51,6 +51,10 @@ function Admin() {
         wds.push(w)
       }
     }
+    if (wds.length < 1) {
+      alert("Please enter at least a db-page and a language")
+      return
+    }
    
     setWords(wds)
     setIsEditing(false)

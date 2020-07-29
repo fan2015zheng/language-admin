@@ -1,0 +1,28 @@
+._table {
+  margin: 20px;
+}
+._table th {
+  padding: 10px;
+}
+._table td {
+  padding: 0;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+._dbPageInput {
+  width: 90px;
+}
+
+._keyInput {
+  width: 200px;
+}
+
+._lanInput {
+  width: 350px;
+}
+
+._input {
+  border: none;
+  padding: 10px 10px;
+}

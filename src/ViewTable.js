@@ -22,7 +22,7 @@ function EditTable({words}) {
           return (
             <tr key={i}>
               <td className="text-center">{i+1}</td>
-              <td className="text-center">{w.dbPage}</td>
+              <td className="text-center">{w.page}</td>
               <td className="text-center">{w.key}</td>
               <td className="text-center">{w.English}</td>
               <td className="text-center">{w.Chinese}</td>

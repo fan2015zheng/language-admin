@@ -34,8 +34,8 @@ function EditTable({rows, updateRows}) {
           return (
             <tr key={i}>
               <td>
-                <input value={rows[i].dbPage}
-                  onChange={(e)=>{ onCellChange(i,"dbPage",e.target.value) }}
+                <input value={rows[i].page}
+                  onChange={(e)=>{ onCellChange(i,"page",e.target.value) }}
                   className="_dbPageInput _input" type="text"/>
               </td>
               <td>

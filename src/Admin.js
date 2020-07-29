@@ -1,54 +1,56 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Admin.css'
+import EditTable from './EditTable'
+import ViewTable from './ViewTable'
 
 function Admin() {
+
+  const [rows, setRows] = useState([1,2,3,4,5,6,7,8].map(() => {
+    const w = {}
+    w.dbPage = "" 
+    w.key = ""
+    w.English = ""
+    w.Chinese = ""
+    w.Pinyin = ""
+    w.French = ""
+    w.German = ""
+    return w
+  }))
+  const [words, setWords] = useState([])
+
+  const [isEditing, setIsEditing] = useState(true)
+
+  function updateRows(rows) {
+    setRows(rows)
+  }
+
+  function preview() {
+    const wds = []
+    for(let i=0; i<8; i++) {
+      const w = rows[i]
+      if (w && w.dbPage && (w.English || w.Chinese || w.Pinyin || w.French || w.German)) {
+        wds.push(w)
+      }
+    }
+   
+    setWords(wds)
+    setIsEditing(false)
+  }
+  function edit() {
+    setIsEditing(true)
+  }
+  const table = isEditing ? <EditTable rows={rows} updateRows={updateRows}/> : <ViewTable  words={words}/>
+  const previewNoDisp = isEditing ? "" : "_noDisp"
+  const editNoDisp = isEditing ? "_noDisp" : ""
+  const saveNoDisp = isEditing ? "_noDisp" : ""
   return (<>
-    <div className="_tableWrap">
-      <table className="_table">
-        <thead>
-          <tr>
-            <th className="text-center">db Page</th>
-            <th className="text-center">key</th>
-            <th className="text-center">English</th>
-            <th className="text-center">中文</th>
-            <th className="text-center">拼音</th>
-            <th className="text-center">Français</th>
-            <th className="text-center">Deutsche</th>
-            <th>  </th>
-          </tr>
-        </thead>
-        <tbody>
-          {[1,2,3,4,5,6,7,8].map((i) => {
-            return (
-              <tr key={i}>
-                <td>
-                  <input className="_dbPageInput _input" type="text"></input>
-                </td>
-                <td>
-                  <input className="_keyInput _input" type="text"></input>
-                </td>
-                <td>
-                  <input className="_lanInput _input" type="text"></input>
-                </td>
-                <td>
-                  <input className="_lanInput _input" type="text"></input>
-                </td>
-                <td>
-                  <input className="_lanInput _input" type="text"></input>
-                </td>
-                <td>
-                  <input className="_lanInput _input" type="text"></input>
-                </td>
-                <td>
-                  <input className="_lanInput _input" type="text"></input>
-                </td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
-    </div>
+    {table}
+    
+    <button onClick={preview} className={`_ready btn btn-info ${previewNoDisp}`}>Preview</button>
+    <button onClick={edit} className={`_ready btn btn-info ${editNoDisp}`}>Back</button>
+    <button className={`_save btn btn-success ${saveNoDisp}`}>Save to database</button>
   </>)
 }
 
 export default Admin
+

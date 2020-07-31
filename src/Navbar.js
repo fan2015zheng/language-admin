@@ -5,7 +5,7 @@ import Util from './Util'
 function Navbar({mode, updateMode, chapter, updateChapter, lesson,
   updateLesson, page, updatePage, password, updatePassword}){
 
-  const chapterText = chapter && chapter>0 ? "Unit "+chapter : "Chapters"
+  const chapterText = chapter && chapter>0 ? "Unit "+chapter : "Units"
   const lessonText = lesson && lesson>0 ? "Lesson "+lesson : "Lessons"
   const pageText = page && page>0 ? "Page "+page : "Pages"
   const pageCount = Util.getPageCount("", chapter, lesson)
@@ -29,7 +29,7 @@ function Navbar({mode, updateMode, chapter, updateChapter, lesson,
         </span>
         <div className="dropdown-menu">
           {[1,2,3].map((i) =>
-            <span key={i} onClick={() => {updateChapter(i)}} className="dropdown-item _pointer">Chapter {i}</span>
+            <span key={i} onClick={() => {updateChapter(i)}} className="dropdown-item _pointer">Unit {i}</span>
           )}
         </div>
       </li>

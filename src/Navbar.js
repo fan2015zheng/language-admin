@@ -89,7 +89,7 @@ function Navbar({mode, updateMode, chapter, updateChapter, lesson,
       <ul className="navbar-nav">
         <li>
           <input value={password} onChange={(e)=>{ updatePassword(e.target.value) }}
-            type="text" class="form-control _password navbar-right" placeholder="Password"/>
+            type="text" className="form-control _password navbar-right" placeholder="Password"/>
         </li> 
       </ul> 
   

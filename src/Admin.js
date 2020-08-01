@@ -119,10 +119,24 @@ function Admin({mode, chapter, lesson, page, password}) {
   const previewNoDisp = isEditing ? "" : "_noDisp"
   const editNoDisp = isEditing ? "_noDisp" : ""
   const saveNoDisp = isEditing ? "_noDisp" : ""
+  const bigSpace = <span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>
   return (<>
     {table}
     
-    <button onClick={preview} className={`_ready btn btn-info ${previewNoDisp}`}>Preview</button>
+    <button onClick={preview} className={`_ready btn btn-info ${previewNoDisp}`}>Preview {bigSpace} Preview  {bigSpace} Preview </button>
     <button onClick={edit} className={`_ready btn btn-info ${editNoDisp}`}>Back</button>
     <button onClick={save} className={`_save btn btn-success ${saveNoDisp}`}>Save to database</button>
   </>)

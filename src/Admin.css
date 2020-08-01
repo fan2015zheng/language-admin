@@ -1,6 +1,9 @@
 ._ready {
   margin: 20px; width: 2000px;
 }
+._back {
+  margin: 20px; width: 200px;
+}
 ._save {
   margin: 20px;
   width: 400px;

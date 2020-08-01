@@ -137,7 +137,7 @@ function Admin({mode, chapter, lesson, page, password}) {
     {table}
     
     <button onClick={preview} className={`_ready btn btn-info ${previewNoDisp}`}>Preview {bigSpace} Preview  {bigSpace} Preview </button>
-    <button onClick={edit} className={`_ready btn btn-info ${editNoDisp}`}>Back</button>
+    <button onClick={edit} className={`_back btn btn-info ${editNoDisp}`}>Back</button>
     <button onClick={save} className={`_save btn btn-success ${saveNoDisp}`}>Save to database</button>
   </>)
 }

@@ -23,7 +23,7 @@ function EditTable({rows, updateRows}) {
           <th className="text-center">English</th>
           <th className="text-center">中文</th>
           <th className="text-center">拼音</th>
-          <th className="text-center">Français çœéîèêâàù</th>
+          <th className="text-center">Français çœéÉîèêâàù</th>
           <th className="text-center">Deutsche äÄ</th>
           <th>  </th>
         </tr>

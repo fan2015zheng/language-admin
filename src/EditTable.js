@@ -24,7 +24,7 @@ function EditTable({rows, updateRows}) {
           <th className="text-center">中文</th>
           <th className="text-center">拼音</th>
           <th className="text-center">Français çœéÉîèêâàù</th>
-          <th className="text-center">Deutsche äÄ</th>
+          <th className="text-center">Deutsche äÄßöü</th>
           <th>  </th>
         </tr>
       </thead>
